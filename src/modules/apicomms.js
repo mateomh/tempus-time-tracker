@@ -99,9 +99,27 @@ const createUser = async (name, avatarurl) => {
   return data;
 };
 
+const getCategories = async () => {
+  const categoriesUrl = apiUrl.concat('categories/');
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    mode: 'cors',
+  };
+
+  const data = await fetch(categoriesUrl, options);
+  const categories = await data.json();
+  console.log(categories);
+  return categories;
+};
+
 export {
   getTasks,
   saveTask,
   checkUserName,
   createUser,
+  getCategories,
 };

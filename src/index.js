@@ -6,12 +6,14 @@ import {
   // getTasks,
   // checkUserName,
   createUser,
+  getCategories,
 } from './modules/apicomms';
 
 // getTasks().catch(console.log('ERROR'));
 // saveTask().catch(e => console.log('errrrrrrrroooooooooosssss', e));
 // checkUserName('pancho').catch(e => console.log(e));
 createUser('pancho', './src/assets/1.png').catch(e => console.log(e));
+getCategories();
 
 ReactDOM.render(
   <React.StrictMode>
