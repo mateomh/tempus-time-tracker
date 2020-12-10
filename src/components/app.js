@@ -1,7 +1,7 @@
-import LandingPage from './landing';
+import Routes from '../routes';
 
 const App = () => (
-  <LandingPage />
+  <Routes />
 );
 
 export default App;

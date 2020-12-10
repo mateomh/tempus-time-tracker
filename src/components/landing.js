@@ -1,5 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
+import { Link } from 'react-router-dom';
 import LandingStyles from '../assets/landing.module.css';
 
 const LandingPage = () => {
@@ -9,6 +10,7 @@ const LandingPage = () => {
       <button
         type="button"
         className={`${LandingStyles.Button} ${LandingStyles.Green}`}
+        onClick={() => <Link to="/signin" />}
       >
         Sign In
       </button>
