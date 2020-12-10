@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue1: #62b5e5;
+  --blue2: #0092cb;
+  --grey1: #67899c;
+  --grey2: #d0d3d4;
+  --green1: #addc91;
+  --green2: #79BE70;
+  --black1: #3f4443;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');

@@ -38,7 +38,7 @@ const saveTask = async () => {
   };
 
   const resp = await fetch(taskUrl, options);
-
+  console.log('response', resp);
   if (!resp.ok) {
     errorHandle(resp.statusText);
   }
@@ -60,7 +60,7 @@ const checkUserName = async name => {
   };
 
   const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
-
+  console.log('user response', resp);
   const [user] = await resp.json();
 
   if (user === undefined) {
