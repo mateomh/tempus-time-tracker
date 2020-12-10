@@ -48,6 +48,28 @@ const saveTask = async () => {
   return task;
 };
 
+const checkUserName = async name => {
+  const userUrl = apiUrl.concat(`users/${name}`);
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    mode: 'cors',
+  };
+
+  const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
+
+  const [user] = await resp.json();
+
+  if (user === undefined) {
+    errorHandle('User does not exist');
+  }
+
+  return user;
+};
+
 export {
   getTasks,
   saveTask,
