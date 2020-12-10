@@ -1,5 +1,7 @@
+import LandingPage from './landing';
+
 const App = () => (
-  <h1>Hello World</h1>
+  <LandingPage />
 );
 
 export default App;

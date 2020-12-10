@@ -1,0 +1,39 @@
+@import url('./general.css');
+
+.Main {
+  background-color: var(--blue1);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5vh;
+}
+
+.Title {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  font-size: 10vh;
+}
+
+.Button {
+  padding: 2vh;
+  border-radius: 1vh;
+  border: none;
+  font-weight: bold;
+  width: 50vw;
+  cursor: pointer;
+  outline: none;
+}
+
+.Green {
+  background-color: var(--green1);
+  color: white;
+}
+
+.Grey {
+  background-color: var(--blue2);
+  color: white;
+}
