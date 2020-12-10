@@ -7,6 +7,7 @@ import {
   // checkUserName,
   createUser,
   getCategories,
+  createCategory,
 } from './modules/apicomms';
 
 // getTasks().catch(console.log('ERROR'));
@@ -14,6 +15,7 @@ import {
 // checkUserName('pancho').catch(e => console.log(e));
 createUser('pancho', './src/assets/1.png').catch(e => console.log(e));
 getCategories();
+createCategory('Work', 'pancho').catch(e => console.log(e));
 
 ReactDOM.render(
   <React.StrictMode>

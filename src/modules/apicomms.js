@@ -116,10 +116,43 @@ const getCategories = async () => {
   return categories;
 };
 
+const createCategory = async (name, logourl) => {
+  const categoryUrl = apiUrl.concat('categories/');
+
+  let namePost = name.toLowerCase();
+  namePost = namePost.charAt(0).toUpperCase() + namePost.slice(1);
+
+  const category = {
+    name: namePost,
+    logourl,
+  };
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    mode: 'cors',
+    body: JSON.stringify(category),
+  };
+
+  const resp = await fetch(categoryUrl, options).catch(() => console.log('Category ERRORR'));
+  console.log(resp);
+
+  if (!resp.ok) {
+    errorHandle('Category already exists');
+  }
+
+  const data = await resp.json();
+  console.log(data);
+  return data;
+};
+
 export {
   getTasks,
   saveTask,
   checkUserName,
   createUser,
   getCategories,
+  createCategory,
 };
