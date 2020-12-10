@@ -70,7 +70,38 @@ const checkUserName = async name => {
   return user;
 };
 
+const createUser = async (name, avatarurl) => {
+  const userUrl = apiUrl.concat('users/');
+
+  const user = {
+    name,
+    avatarurl,
+  };
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    mode: 'cors',
+    body: JSON.stringify(user),
+  };
+
+  const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
+  console.log(resp);
+
+  if (!resp.ok) {
+    errorHandle('User already exists');
+  }
+
+  const data = await resp.json();
+  console.log(data);
+  return data;
+};
+
 export {
   getTasks,
   saveTask,
+  checkUserName,
+  createUser,
 };
