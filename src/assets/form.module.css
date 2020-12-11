@@ -23,7 +23,14 @@
   width: 90vw;
   color: var(--black1);
   border-bottom: 0.5vh dashed white;
-  /* border: 1px solid goldenrod; */
+}
+
+.Label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: bold;
 }
 
 .Input {
@@ -31,6 +38,7 @@
   background-color: var(--grey1);
   width: 90vw;
   padding: 2vh;
+  margin-top: 2vh;
   color: white;
   text-align: center;
   font-weight: bold;
