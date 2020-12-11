@@ -1,25 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import App from './components/app';
-import {
-  // saveTask,
-  // getTasks,
-  checkUserName,
-  // createUser,
-  // getCategories,
-  // createCategory,
-} from './modules/apicomms';
+import rootReducer from './reducers/root';
 
-// getTasks().catch(console.log('ERROR'));
-// saveTask().catch(e => console.log('errrrrrrrroooooooooosssss', e));
-checkUserName('michael').catch(e => console.log(e));
-// createUser('pancho', './src/assets/1.png').catch(e => console.log(e));
-// getCategories();
-// createCategory('Work', 'pancho').catch(e => console.log(e));
+const myStore = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={myStore}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root'),
 );
