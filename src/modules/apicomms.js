@@ -76,7 +76,7 @@ const checkUserName = async name => {
   return user;
 };
 
-const createUser = async (name, avatarurl) => {
+const createUser = async (name, avatarurl = null) => {
   const userUrl = apiUrl.concat('users/');
 
   const user = {
@@ -96,11 +96,13 @@ const createUser = async (name, avatarurl) => {
   const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
   console.log(resp);
 
-  if (!resp.ok) {
-    errorHandle('User already exists');
+  let data;
+  if (resp.ok) {
+    data = await resp.json();
+  } else {
+    data = undefined;
   }
 
-  const data = await resp.json();
   console.log(data);
   return data;
 };
