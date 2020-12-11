@@ -5,6 +5,12 @@ const createSession = user => (
   }
 );
 
+const destroySession = () => (
+  {
+    type: 'DESTROY_SESSION',
+  }
+);
+
 const changeCategory = category => (
   {
     type: 'CHANGE_CATEGORY',
@@ -21,6 +27,7 @@ const addTask = task => (
 
 export {
   createSession,
+  destroySession,
   changeCategory,
   addTask,
 };
