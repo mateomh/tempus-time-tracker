@@ -4,7 +4,7 @@ import sessionReducer from './session';
 import taskReducer from './task';
 
 const rootReducer = combineReducers({
-  session: sessionReducer,
+  sessionUser: sessionReducer,
   category: categoryReducer,
   tasks: taskReducer,
 });

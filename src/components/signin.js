@@ -12,7 +12,7 @@ const SignIn = props => {
   const callBack = async () => {
     const userName = document.getElementById('user-name');
     const user = await ApiComms.checkUserName(userName.value);
-    console.log(props);
+
     if (user === undefined) {
       console.log('user does not exists');
     } else {
