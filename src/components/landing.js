@@ -15,7 +15,7 @@ const LandingPage = props => {
         className={`${LandingStyles.Button} ${LandingStyles.Green}`}
         onClick={() => console.log('click')}
       >
-        Sign Up
+        Sign In
       </Link>
 
       <Link

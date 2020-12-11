@@ -1,8 +1,16 @@
 import FormStyles from '../assets/form.module.css';
+import * as ApiComms from '../modules/apicomms';
 
 const SignIn = () => {
-  const callBack = () => {
-    console.log('sign in');
+  const callBack = async () => {
+    const userName = document.getElementById('user-name');
+    const user = await ApiComms.checkUserName(userName.value);
+    if (user === undefined) {
+      console.log('user does not exists');
+    } else {
+      console.log('Welcome', user);
+    }
+    // console.log(user);
   };
 
   return (
@@ -12,6 +20,7 @@ const SignIn = () => {
         className={FormStyles.Input}
         type="text"
         placeholder="Enter Your Name"
+        id="user-name"
       />
       <button
         className={FormStyles.Button}

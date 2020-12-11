@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import CreateTask from './components/createtask';
+// import CreateTask from './components/createtask';
 import LandingPage from './components/landing';
-// import SignIn from './components/signin';
+import SignIn from './components/signin';
 import SignUp from './components/signup';
 
 const Routes = () => (
@@ -12,8 +12,8 @@ const Routes = () => (
         <LandingPage />
       </Route>
       <Route exact path="/signin">
-        {/* <SignIn /> */}
-        <CreateTask />
+        <SignIn />
+        {/* <CreateTask /> */}
       </Route>
       <Route exact path="/signup">
         <SignUp />
