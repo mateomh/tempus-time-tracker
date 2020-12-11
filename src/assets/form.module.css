@@ -1,0 +1,52 @@
+@import url('./general.css');
+
+::placeholder {
+  color: white;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 2vh;
+  background-color: var(--blue2);
+}
+
+.Title {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  color: var(--black1);
+  border-bottom: 0.5vh dashed white;
+  /* border: 1px solid goldenrod; */
+}
+
+.Input {
+  border-radius: 1vh;
+  background-color: var(--grey1);
+  width: 90vw;
+  padding: 2vh;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 4vh;
+  border: 1px solid black;
+}
+
+.Button {
+  background-color: var(--green2);
+  color: white;
+  padding: 3vh;
+  border-radius: 1vh;
+  font-size: 3vh;
+  font-weight: bold;
+  width : 90vw;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

@@ -20,13 +20,17 @@
 }
 
 .Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2vh;
   border-radius: 1vh;
   border: none;
   font-weight: bold;
-  width: 50vw;
+  width: 80vw;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 }
 
 .Green {
