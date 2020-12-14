@@ -1,4 +1,4 @@
-const categoryReducer = (state = 'All', action) => {
+const filterReducer = (state = {}, action) => {
   const { type, payload: category } = action;
 
   switch (type) {
@@ -9,4 +9,4 @@ const categoryReducer = (state = 'All', action) => {
   }
 };
 
-export default categoryReducer;
+export default filterReducer;

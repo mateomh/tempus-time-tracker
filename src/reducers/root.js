@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
-import categoryReducer from './category';
+import categoriesReducer from './categories';
+import filterReducer from './filter';
 import sessionReducer from './session';
 import taskReducer from './task';
 
 const rootReducer = combineReducers({
   sessionUser: sessionReducer,
-  category: categoryReducer,
+  filter: filterReducer,
+  categories: categoriesReducer,
   tasks: taskReducer,
 });
 

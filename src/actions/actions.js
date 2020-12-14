@@ -25,9 +25,17 @@ const addTask = task => (
   }
 );
 
+const addCategory = category => (
+  {
+    type: 'ADD_CATEGORY_TO_STORE',
+    payload: category,
+  }
+);
+
 export {
   createSession,
   destroySession,
   changeCategory,
   addTask,
+  addCategory,
 };
