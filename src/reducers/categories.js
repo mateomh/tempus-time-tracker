@@ -1,4 +1,4 @@
-const categoriesReducer = (state = {}, action) => {
+const categoriesReducer = (state = [], action) => {
   const { type, payload: category } = action;
 
   switch (type) {

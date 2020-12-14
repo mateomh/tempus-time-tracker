@@ -5,8 +5,8 @@ const errorHandle = msg => {
   throw Error(msg);
 };
 
-const getTasks = async () => {
-  const taskUrl = apiUrl.concat('tasks/');
+const getTasks = async userId => {
+  const taskUrl = apiUrl.concat(`tasks/${userId}`);
 
   const options = {
     method: 'GET',
