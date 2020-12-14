@@ -20,8 +20,9 @@ const NavBar = props => {
     switch (action) {
       case 'logout':
         clearUser();
-        // clearFilter();
-        // history.push('/');
+        break;
+      case 'categories':
+        history.push('/categories');
         break;
       default:
         break;
