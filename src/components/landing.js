@@ -4,7 +4,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
 import { Link } from 'react-router-dom';
-import LandingStyles from '../assets/landing.module.css';
+import LandingStyles from '../assets/stylesheets/landing.module.css';
 
 const LandingPage = props => {
   return (

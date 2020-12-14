@@ -1,5 +1,5 @@
 /* eslint-disable arrow-body-style */
-import FormStyles from '../assets/form.module.css';
+import FormStyles from '../assets/stylesheets/form.module.css';
 
 const CreateTask = () => {
   return (

@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import DisplayStyles from '../assets/totaldisplay.module.css';
+import DisplayStyles from '../assets/stylesheets/totaldisplay.module.css';
 
 const TotalDisplay = () => {
   const store = useStore();

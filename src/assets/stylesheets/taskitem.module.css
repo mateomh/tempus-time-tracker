@@ -1,0 +1,18 @@
+@import url('./general.css');
+
+.Item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  padding: 2vh;
+  margin: 3vh 0;
+  border-radius: 2vh;
+  background-color: var(--grey2);
+  border: 1vh solid var(--blue2);
+}
+
+.Desc {
+  font-weight: bold;
+}

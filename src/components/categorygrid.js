@@ -1,18 +1,19 @@
 /* eslint-disable react/no-unused-prop-types */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import CategoryStyles from '../assets/categorygrid.module.css';
+import { useHistory } from 'react-router-dom';
+import CategoryStyles from '../assets/stylesheets/categorygrid.module.css';
 import * as Actions from '../actions/actions';
 
 const CategoryGrid = props => {
   const { categories, changeFilter } = props;
+  const history = useHistory();
 
   const handleClick = event => {
     const { id } = event.target;
-    console.log(id);
     const category = categories[id - 1];
-    console.log(category);
     changeFilter(category);
+    history.push('/view');
   };
 
   return (

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import FormStyles from '../assets/form.module.css';
+import FormStyles from '../assets/stylesheets/form.module.css';
 import * as ApiComms from '../modules/apicomms';
 import * as Actions from '../actions/actions';
 

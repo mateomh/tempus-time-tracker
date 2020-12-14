@@ -13,6 +13,7 @@ import LandingPage from './components/landing';
 import SignIn from './components/signin';
 import SignUp from './components/signup';
 import TotalDisplay from './components/totaldisplay';
+import TaskList from './components/tasklist';
 
 const Routes = () => (
   <BrowserRouter>
@@ -32,6 +33,7 @@ const Routes = () => (
       </Route>
       <Route exact path="/view">
         <TotalDisplay />
+        <TaskList />
       </Route>
     </Switch>
   </BrowserRouter>
