@@ -11,9 +11,9 @@ const destroySession = () => (
   }
 );
 
-const changeCategory = category => (
+const changeFilter = category => (
   {
-    type: 'CHANGE_CATEGORY',
+    type: 'CHANGE_FILTER',
     payload: category,
   }
 );
@@ -35,7 +35,7 @@ const addCategory = category => (
 export {
   createSession,
   destroySession,
-  changeCategory,
+  changeFilter,
   addTask,
   addCategory,
 };

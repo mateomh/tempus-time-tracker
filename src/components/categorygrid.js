@@ -1,13 +1,18 @@
-import { useStore } from 'react-redux';
+/* eslint-disable react/no-unused-prop-types */
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import CategoryStyles from '../assets/categorygrid.module.css';
+import * as Actions from '../actions/actions';
 
-const CategoryGrid = () => {
-  const store = useStore();
-  const { categories } = store.getState();
+const CategoryGrid = props => {
+  const { categories, changeFilter } = props;
 
   const handleClick = event => {
     const { id } = event.target;
     console.log(id);
+    const category = categories[id - 1];
+    console.log(category);
+    changeFilter(category);
   };
 
   return (
@@ -27,4 +32,22 @@ const CategoryGrid = () => {
   );
 };
 
-export default CategoryGrid;
+CategoryGrid.propTypes = {
+  changeFilter: PropTypes.func,
+  categories: PropTypes.arrayOf(Object),
+};
+
+CategoryGrid.defaultProps = {
+  changeFilter: undefined,
+  categories: [],
+};
+
+const mapStateToProps = state => ({
+  categories: state.categories,
+});
+
+const mapDispatchToProps = dispatch => ({
+  changeFilter: category => dispatch(Actions.changeFilter(category)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryGrid);
