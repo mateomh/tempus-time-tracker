@@ -39,6 +39,12 @@ const updateTotalHours = value => (
   }
 );
 
+const clearTasks = () => (
+  {
+    type: 'CLEAR_TASKS',
+  }
+);
+
 export {
   createSession,
   destroySession,
@@ -46,4 +52,5 @@ export {
   addTask,
   addCategory,
   updateTotalHours,
+  clearTasks,
 };

@@ -17,6 +17,8 @@ const SignIn = props => {
     if (user === undefined) {
       console.log('user does not exists');
     } else {
+      props.clearFilter();
+      props.clearTasks();
       props.createSession(user);
       const categories = await ApiComms.getCategories();
       categories.map(category => props.addCategory(category));
@@ -52,18 +54,24 @@ SignIn.propTypes = {
   createSession: PropTypes.func,
   addCategory: PropTypes.func,
   addTask: PropTypes.func,
+  clearTasks: PropTypes.func,
+  clearFilter: PropTypes.func,
 };
 
 SignIn.defaultProps = {
   createSession: undefined,
   addCategory: undefined,
   addTask: undefined,
+  clearTasks: undefined,
+  clearFilter: undefined,
 };
 
 const mapDispatchToProps = dispatch => ({
   createSession: user => dispatch(Actions.createSession(user)),
   addCategory: category => dispatch(Actions.addCategory(category)),
   addTask: task => dispatch(Actions.addTask(task)),
+  clearTasks: () => dispatch(Actions.clearTasks()),
+  clearFilter: () => dispatch(Actions.changeFilter({})),
 });
 
 export default connect(undefined, mapDispatchToProps)(SignIn);

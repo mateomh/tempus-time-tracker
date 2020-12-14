@@ -3,17 +3,25 @@
 /* eslint-disable arrow-body-style */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import NavbarStyles from '../assets/stylesheets/navbar.module.css';
 import * as Actions from '../actions/actions';
 
 const NavBar = props => {
-  const { user, clearUser } = props;
+  const {
+    user,
+    clearUser,
+  } = props;
+
+  const history = useHistory();
 
   const handleClick = event => {
     const action = event.target.getAttribute('data-action');
     switch (action) {
       case 'logout':
         clearUser();
+        // clearFilter();
+        // history.push('/');
         break;
       default:
         break;
