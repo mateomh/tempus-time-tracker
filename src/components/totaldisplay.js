@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import DisplayStyles from '../assets/stylesheets/totaldisplay.module.css';
 
 const TotalDisplay = props => {
-  const { user, filter } = props;
+  const { user, filter, total } = props;
   const history = useHistory();
 
   if (Object.keys(user).length === 0) {
@@ -21,7 +21,10 @@ const TotalDisplay = props => {
         {filter.name === undefined ? 'All' : filter.name}
         &nbsp;categories
       </p>
-      <p className={DisplayStyles.Number}>1169 hours</p>
+      <p className={DisplayStyles.Number}>
+        {total}
+        &nbsp;hours
+      </p>
     </div>
   );
 };
@@ -29,17 +32,20 @@ const TotalDisplay = props => {
 TotalDisplay.propTypes = {
   user: PropTypes.objectOf(Object),
   filter: PropTypes.objectOf(Object),
+  total: PropTypes.number,
 };
 
 TotalDisplay.defaultProps = {
   user: undefined,
   filter: undefined,
+  total: 0,
 };
 
 const mapStateToProps = state => (
   {
     user: state.sessionUser,
     filter: state.filter,
+    total: state.total,
   }
 );
 

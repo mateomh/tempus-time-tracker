@@ -32,10 +32,18 @@ const addCategory = category => (
   }
 );
 
+const updateTotalHours = value => (
+  {
+    type: 'UPDATE_TOTAL',
+    payload: value,
+  }
+);
+
 export {
   createSession,
   destroySession,
   changeFilter,
   addTask,
   addCategory,
+  updateTotalHours,
 };
