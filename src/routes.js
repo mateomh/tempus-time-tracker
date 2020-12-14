@@ -26,9 +26,12 @@ const Routes = () => (
       <Route exact path="/signup">
         <SignUp />
       </Route>
-      <Route exact path="/show">
+      <Route exact path="/categories">
         <TotalDisplay />
         <CategoryGrid />
+      </Route>
+      <Route exact path="/view">
+        <TotalDisplay />
       </Route>
     </Switch>
   </BrowserRouter>

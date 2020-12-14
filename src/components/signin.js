@@ -24,7 +24,7 @@ const SignIn = props => {
       const tasks = await ApiComms.getTasks(user.id);
       tasks.map(task => props.addTask(task));
 
-      history.push('/show');
+      history.push('/categories');
     }
   };
 
