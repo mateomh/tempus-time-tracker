@@ -1,7 +1,9 @@
+import { useStore } from 'react-redux';
 import CategoryStyles from '../assets/categorygrid.module.css';
 
 const CategoryGrid = () => {
-  const categories = ['Work', 'Commute', 'Entertainment', 'Learning', 'Sleep'];
+  const store = useStore();
+  const { categories } = store.getState();
 
   const handleClick = event => {
     const { id } = event.target;
@@ -13,12 +15,12 @@ const CategoryGrid = () => {
       {categories.map(category => (
         <button
           type="button"
-          key={category}
-          id={category}
+          key={category.id}
+          id={category.id}
           className={CategoryStyles.Item}
           onClick={handleClick}
         >
-          {category}
+          {category.name}
         </button>
       ))}
     </div>
