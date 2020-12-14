@@ -1,7 +1,7 @@
 @import url('./general.css');
 
 .Container {
-  background-color: var(--grey2);
+  background-color: var(--grey3);
   height: 70vh;
   width: 100vw;
   display: grid;
@@ -15,9 +15,10 @@
   align-items: center;
   justify-content: center;
   border: 0.5vh solid var(--black1);
-  background-color: var(--green2);
+  background-color: var(--blue2);
   color: white;
   font-weight: bold;
   font-size: 3.5vh;
   cursor: pointer;
+  border-radius: 5vh;
 }

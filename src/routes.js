@@ -4,6 +4,7 @@ import CategoryGrid from './components/categorygrid';
 import LandingPage from './components/landing';
 import SignIn from './components/signin';
 import SignUp from './components/signup';
+import TotalDisplay from './components/totaldisplay';
 
 const Routes = () => (
   <BrowserRouter>
@@ -18,6 +19,7 @@ const Routes = () => (
         <SignUp />
       </Route>
       <Route exact path="/show">
+        <TotalDisplay />
         <CategoryGrid />
       </Route>
     </Switch>

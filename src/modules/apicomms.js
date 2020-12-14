@@ -18,7 +18,6 @@ const getTasks = async () => {
 
   const data = await fetch(taskUrl, options);
   const tasks = await data.json();
-  console.log(tasks);
   return tasks;
 };
 
@@ -38,13 +37,13 @@ const saveTask = async () => {
   };
 
   const resp = await fetch(taskUrl, options);
-  console.log('response', resp);
+
   if (!resp.ok) {
     errorHandle(resp.statusText);
   }
 
   const task = await resp.json();
-  console.log(task);
+
   return task;
 };
 
@@ -94,7 +93,6 @@ const createUser = async (name, avatarurl = null) => {
   };
 
   const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
-  console.log(resp);
 
   let data;
   if (resp.ok) {
@@ -103,7 +101,6 @@ const createUser = async (name, avatarurl = null) => {
     data = undefined;
   }
 
-  console.log(data);
   return data;
 };
 
@@ -120,7 +117,7 @@ const getCategories = async () => {
 
   const data = await fetch(categoriesUrl, options);
   const categories = await data.json();
-  console.log(categories);
+
   return categories;
 };
 
@@ -145,14 +142,13 @@ const createCategory = async (name, logourl) => {
   };
 
   const resp = await fetch(categoryUrl, options).catch(() => console.log('Category ERRORR'));
-  console.log(resp);
 
   if (!resp.ok) {
     errorHandle('Category already exists');
   }
 
   const data = await resp.json();
-  console.log(data);
+
   return data;
 };
 

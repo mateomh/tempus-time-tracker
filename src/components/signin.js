@@ -17,7 +17,7 @@ const SignIn = props => {
       console.log('user does not exists');
     } else {
       props.createSession(user);
-      history.push('/');
+      history.push('/show');
     }
   };
 
