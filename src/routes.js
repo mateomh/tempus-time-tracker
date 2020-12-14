@@ -14,6 +14,7 @@ import SignIn from './components/signin';
 import SignUp from './components/signup';
 import TotalDisplay from './components/totaldisplay';
 import TaskList from './components/tasklist';
+import NavBar from './components/navbar';
 
 const Routes = () => (
   <BrowserRouter>
@@ -30,10 +31,12 @@ const Routes = () => (
       <Route exact path="/categories">
         <TotalDisplay />
         <CategoryGrid />
+        <NavBar />
       </Route>
       <Route exact path="/view">
         <TotalDisplay />
         <TaskList />
+        <NavBar />
       </Route>
     </Switch>
   </BrowserRouter>

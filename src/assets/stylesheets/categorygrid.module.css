@@ -2,7 +2,6 @@
 
 .Container {
   background-color: var(--grey3);
-  height: 70vh;
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr;

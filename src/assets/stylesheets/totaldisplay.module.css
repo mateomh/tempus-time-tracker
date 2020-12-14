@@ -1,7 +1,7 @@
 @import url('./general.css');
 
 .Display {
-  height: 30vh;
+  height: 20vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
   padding: 5vh;
   color: var(--black1);
   background-color: var(--grey3);
+  text-align: center;
 }
 
 .Text {
