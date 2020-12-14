@@ -1,5 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useStore } from 'react-redux';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  useHistory,
+  useLocation,
+} from 'react-router-dom';
 import CategoryGrid from './components/categorygrid';
 import LandingPage from './components/landing';
 import SignIn from './components/signin';
