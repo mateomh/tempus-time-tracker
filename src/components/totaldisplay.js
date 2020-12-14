@@ -1,21 +1,21 @@
 /* eslint-disable arrow-body-style */
-import { useStore } from 'react-redux';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import DisplayStyles from '../assets/stylesheets/totaldisplay.module.css';
 
-const TotalDisplay = () => {
-  const store = useStore();
-  const { sessionUser, filter } = store.getState();
+const TotalDisplay = props => {
+  const { user, filter } = props;
   const history = useHistory();
 
-  if (Object.keys(sessionUser).length === 0) {
+  if (Object.keys(user).length === 0) {
     history.push('/');
   }
 
   return (
     <div className={DisplayStyles.Display}>
       <p className={DisplayStyles.Text}>
-        {sessionUser.name}
+        {user.name}
         &rsquo;s&nbsp;
         total time for&nbsp;
         {filter.name === undefined ? 'All' : filter.name}
@@ -26,4 +26,21 @@ const TotalDisplay = () => {
   );
 };
 
-export default TotalDisplay;
+TotalDisplay.propTypes = {
+  user: PropTypes.objectOf(Object),
+  filter: PropTypes.objectOf(Object),
+};
+
+TotalDisplay.defaultProps = {
+  user: undefined,
+  filter: undefined,
+};
+
+const mapStateToProps = state => (
+  {
+    user: state.sessionUser,
+    filter: state.filter,
+  }
+);
+
+export default connect(mapStateToProps)(TotalDisplay);

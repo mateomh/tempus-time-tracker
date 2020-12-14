@@ -16,6 +16,8 @@ const CategoryGrid = props => {
     history.push('/view');
   };
 
+  changeFilter({});
+
   return (
     <div className={CategoryStyles.Container}>
       {categories.map(category => (
