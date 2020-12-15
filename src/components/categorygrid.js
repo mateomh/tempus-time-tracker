@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';

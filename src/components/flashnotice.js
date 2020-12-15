@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-/* eslint-disable arrow-body-style */
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -21,12 +18,7 @@ const FlashNotice = props => {
       }, 3000);
     }
   });
-  // if (error !== '') {
-  //   setTimeout(() => {
-  //     const notice = document.getElementById('notice');
-  //     notice.classList.add(FlashStyles.Hide);
-  //   }, 3000);
-  // }
+
   return (
     <div id="notice" className={`${FlashStyles.Notice} ${FlashStyles.Hide}`}>
       <p>{error}</p>

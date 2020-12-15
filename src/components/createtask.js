@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable arrow-body-style */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
@@ -27,7 +25,6 @@ const CreateTask = props => {
     if (desc.value === '' || time.value === '') {
       showError('Fields cannot be empty');
     } else {
-      console.log('move on');
       const task = {
         desc: desc.value,
         time: time.value,
@@ -35,7 +32,6 @@ const CreateTask = props => {
         category_id: filter.id,
       };
       const apiTask = await ApiComms.saveTask(task);
-      console.log(apiTask);
 
       if (apiTask !== undefined) {
         addTask(apiTask);

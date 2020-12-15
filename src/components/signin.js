@@ -1,5 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable react/no-unused-prop-types */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
@@ -18,11 +16,6 @@ const SignIn = props => {
       props.displayError('user does not exists');
     } else {
       props.createSession(user);
-      // const categories = await ApiComms.getCategories();
-      // categories.map(category => props.addCategory(category));
-
-      // const tasks = await ApiComms.getTasks(user.id);
-      // tasks.map(task => props.addTask(task));
 
       history.push('/categories');
     }
@@ -50,28 +43,16 @@ const SignIn = props => {
 
 SignIn.propTypes = {
   createSession: PropTypes.func,
-  addCategory: PropTypes.func,
-  addTask: PropTypes.func,
-  clearTasks: PropTypes.func,
-  clearFilter: PropTypes.func,
   displayError: PropTypes.func,
 };
 
 SignIn.defaultProps = {
   createSession: undefined,
-  addCategory: undefined,
-  addTask: undefined,
-  clearTasks: undefined,
-  clearFilter: undefined,
   displayError: undefined,
 };
 
 const mapDispatchToProps = dispatch => ({
   createSession: user => dispatch(Actions.createSession(user)),
-  addCategory: category => dispatch(Actions.addCategory(category)),
-  addTask: task => dispatch(Actions.addTask(task)),
-  clearTasks: () => dispatch(Actions.clearTasks()),
-  clearFilter: () => dispatch(Actions.changeFilter({})),
   displayError: error => dispatch(Actions.setError(error)),
 });
 

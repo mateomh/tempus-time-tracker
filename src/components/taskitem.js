@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import PropTypes from 'prop-types';
 import TaskItemStyles from '../assets/stylesheets/taskitem.module.css';
 

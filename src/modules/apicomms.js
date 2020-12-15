@@ -63,18 +63,13 @@ const checkUserName = async name => {
   };
 
   const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
-  // console.log('user response', resp);
+
   let user;
   if (resp.ok) {
     [user] = await resp.json();
   } else {
     user = undefined;
   }
-
-  // if (user === undefined) {
-  //   errorHandle('User does not exist');
-  // }
-  // console.log(user);
 
   return user;
 };
