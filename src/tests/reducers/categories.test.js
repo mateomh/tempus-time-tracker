@@ -43,7 +43,7 @@ describe('Categories Reducer', () => {
       expect(state[1]).toBeUndefined();
     },
   );
-  
+
   it(
     '5. Checks a non-repeated value is added to the state',
     () => {
