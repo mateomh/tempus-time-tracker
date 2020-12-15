@@ -5,8 +5,8 @@ const errorHandle = msg => {
   throw Error(msg);
 };
 
-const getTasks = async () => {
-  const taskUrl = apiUrl.concat('tasks/');
+const getTasks = async userId => {
+  const taskUrl = apiUrl.concat(`tasks/${userId}`);
 
   const options = {
     method: 'GET',
@@ -17,35 +17,38 @@ const getTasks = async () => {
   };
 
   const data = await fetch(taskUrl, options);
-  const tasks = await data.json();
-  console.log(tasks);
+  let tasks;
+  if (data.ok) {
+    tasks = await data.json();
+  } else {
+    tasks = undefined;
+  }
+
   return tasks;
 };
 
-const saveTask = async () => {
+const saveTask = async task => {
   const taskUrl = apiUrl.concat('tasks/');
 
-  const info = {
-    desc: 'Mateo',
-  };
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: JSON.stringify(info),
+    body: JSON.stringify(task),
     mode: 'cors',
   };
 
   const resp = await fetch(taskUrl, options);
 
-  if (!resp.ok) {
-    errorHandle(resp.statusText);
+  let response;
+  if (resp.ok) {
+    response = await resp.json();
+  } else {
+    response = undefined;
   }
 
-  const task = await resp.json();
-  console.log(task);
-  return task;
+  return response;
 };
 
 const checkUserName = async name => {
@@ -60,17 +63,23 @@ const checkUserName = async name => {
   };
 
   const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
-
-  const [user] = await resp.json();
-
-  if (user === undefined) {
-    errorHandle('User does not exist');
+  // console.log('user response', resp);
+  let user;
+  if (resp.ok) {
+    [user] = await resp.json();
+  } else {
+    user = undefined;
   }
+
+  // if (user === undefined) {
+  //   errorHandle('User does not exist');
+  // }
+  // console.log(user);
 
   return user;
 };
 
-const createUser = async (name, avatarurl) => {
+const createUser = async (name, avatarurl = null) => {
   const userUrl = apiUrl.concat('users/');
 
   const user = {
@@ -88,14 +97,14 @@ const createUser = async (name, avatarurl) => {
   };
 
   const resp = await fetch(userUrl, options).catch(() => console.log('USER ERRORR'));
-  console.log(resp);
 
-  if (!resp.ok) {
-    errorHandle('User already exists');
+  let data;
+  if (resp.ok) {
+    data = await resp.json();
+  } else {
+    data = undefined;
   }
 
-  const data = await resp.json();
-  console.log(data);
   return data;
 };
 
@@ -112,7 +121,7 @@ const getCategories = async () => {
 
   const data = await fetch(categoriesUrl, options);
   const categories = await data.json();
-  console.log(categories);
+
   return categories;
 };
 
@@ -137,14 +146,13 @@ const createCategory = async (name, logourl) => {
   };
 
   const resp = await fetch(categoryUrl, options).catch(() => console.log('Category ERRORR'));
-  console.log(resp);
 
   if (!resp.ok) {
     errorHandle('Category already exists');
   }
 
   const data = await resp.json();
-  console.log(data);
+
   return data;
 };
 

@@ -1,5 +1,11 @@
+import Routes from '../routes';
+import FlashNotice from './flashnotice';
+
 const App = () => (
-  <h1>Hello World</h1>
+  <>
+    <FlashNotice />
+    <Routes />
+  </>
 );
 
 export default App;
