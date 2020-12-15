@@ -4,9 +4,11 @@
 
 > This project is a time tracker where you can keep track of the time spent in either of the seven categories or in total.
 
-![screenshot](./src/assets/screenshots/screenshot.png)
+![screenshot](./src/assets/screenshots/landing.png)
 
 All the information and verifications for the application with the [Tempus API](https://tempus-mm-api.herokuapp.com/) and stored in the application using REDUX. This is a the final capstone project from the Microverse technical curriculum.
+
+Check the [Tempus API repository here](https://github.com/mateomh/tempus-api.git)
 
 ## Built With
 
@@ -22,8 +24,6 @@ All the information and verifications for the application with the [Tempus API](
 # How to use it
 
 When you fire up the application you are welcomed by the landing page displaying the name of the app and a navbar at the bottom with the links you can use to access the application.
-
-![screenshot](./src/assets/screenshots/landing.png)
 
 The Sign In and Sign Up pages are similar, they present the user with a field to put their name in and a button to validate it, the difference between both pages is the legend on top of the name field and the verification it does with the API.
 
