@@ -112,9 +112,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
-- PokeAPI
-- The Pokemon Company
-- [Dave Ceddia](https://www.youtube.com/channel/UCPrkHuq0i1WflifRXUpvNmg)
+- Heroku
 
 ## 📝 License
 
