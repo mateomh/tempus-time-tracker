@@ -12,12 +12,14 @@
   --blue2: #0092cb;
   --grey1: #67899c;
   --grey2: #d0d3d4;
-  --grey3: #DDE5ED;
+  --grey3: #dde5ed;
   --green1: #addc91;
-  --green2: #79BE70;
+  --green2: #79be70;
   --black1: #3f4443;
-  --yellow1: #F4AF23;
+  --yellow1: #f4af23;
+
   font-size: 4vh;
+  background-color: #dde5ed;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
