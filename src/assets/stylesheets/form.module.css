@@ -1,7 +1,9 @@
 @import url('./general.css');
 
 ::placeholder {
-  color: white;
+  color: whitesmoke;
+  font-weight: lighter;
+  font-size: 3vh;
 }
 
 .Form {
@@ -9,7 +11,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 90vh;
+  height: 80vh;
   width: 100vw;
   padding: 2vh;
   background-color: var(--blue2);
@@ -47,13 +49,16 @@
 }
 
 .Button {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
   background-color: var(--green2);
   color: white;
   padding: 3vh;
-  border-radius: 1vh;
-  font-size: 3vh;
+  font-size: 2.5vh;
   font-weight: bold;
-  width: 90vw;
+  width: 100%;
+  height: 10vh;
   border: none;
   cursor: pointer;
   outline: none;

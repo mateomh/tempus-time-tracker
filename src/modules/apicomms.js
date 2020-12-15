@@ -21,30 +21,28 @@ const getTasks = async userId => {
   return tasks;
 };
 
-const saveTask = async () => {
+const saveTask = async task => {
   const taskUrl = apiUrl.concat('tasks/');
 
-  const info = {
-    desc: 'Mateo',
-  };
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: JSON.stringify(info),
+    body: JSON.stringify(task),
     mode: 'cors',
   };
 
   const resp = await fetch(taskUrl, options);
 
-  if (!resp.ok) {
-    errorHandle(resp.statusText);
+  let response;
+  if (resp.ok) {
+    response = await resp.json();
+  } else {
+    response = undefined;
   }
 
-  const task = await resp.json();
-
-  return task;
+  return response;
 };
 
 const checkUserName = async name => {
