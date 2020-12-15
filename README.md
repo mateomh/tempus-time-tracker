@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tempus Time Tracker
 
-## Available Scripts
+> This project is a time tracker where you can keep track of the time spent in either of the seven categories or in total.
 
-In the project directory, you can run:
+![screenshot](./src/assets/screenshots/screenshot.png)
 
-### `yarn start`
+All the information and verifications for the application with the [Tempus API](https://tempus-mm-api.herokuapp.com/) and stored in the application using REDUX. This is a the final capstone project from the Microverse technical curriculum.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React,
+- Redux,
+- Jest,
+- Tempus API
 
-### `yarn test`
+## Live Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[PokeDex Link]()
 
-### `yarn build`
+# How to use it
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When you fire up the application you are welcomed by the landing page displaying the name of the app and a navbar at the bottom with the links you can use to access the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![screenshot](./src/assets/screenshots/landing.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Sign In and Sign Up pages are similar, they present the user with a field to put their name in and a button to validate it, the difference between both pages is the legend on top of the name field and the verification it does with the API.
 
-### `yarn eject`
+For the sign in the verification is if the user name exists and the legend reads "Keep tracking your time"
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![screenshot](./src/assets/screenshots/signin.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+While for the sign up page the legend reads "Start tracking your time" and the app verifies with the API that the user name doesn't already exists.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![screenshot](./src/assets/screenshots/signup.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The whole application has a flash notice component that lets the user know about any erros that have occured, displaying a message on the top part of the page for three seconds.
 
-## Learn More
+After you log in or signup for the application, you are greeted by the total amount of hours tracked so far for all the categories and a list of the available categories to choose from.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![screenshot](./src/assets/screenshots/categories.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+When you select a category a list of the tasks registered for that category will be displayed and the total time will be updated to total amount for that category.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![screenshot](./src/assets/screenshots/tasklist.png)
 
-### Analyzing the Bundle Size
+Also a button will show in the bottom part of the page that lets the user add a new task for that specific category.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![screenshot](./src/assets/screenshots/createtask.png)
 
-### Making a Progressive Web App
+At the bottom of the page there is a navbar that will give you the chance of going back to the categories list or to logout from the application, the user name is also displayed in the middle of the bar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+After a new task is created the whole application is updated immediately so nothing gets lost.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Setup Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To run the application locally you will need to follow several steps to make it work.
 
-### `yarn build` fails to minify
+First, you have to check if you have **nodejs** installed on your machine. For this type the following command in your terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> node -v
+
+If **command not found** shows as a response, then go to [nodejs.org](https://nodejs.org/en/) and follow the instructions to install it. After completing the installation the same command should show you a version number.
+
+Then clone the [repository](https://github.com/mateomh/tempus-time-tracker.git) into your local drive and open a terminal in the root folder of the project and install the necessary packages to make it work by running this command:
+
+> npm install
+
+This will get the project ready to run. After this run the following command to start the development server on **localhost:3000/** and wait for the browser to open:
+
+> npm start
+
+If the browser does not open or you close it by accident, but the server is still running you can type **localhost:3000/** in your address bar to get into the application again.
+
+
+## Tests
+
+This project has a suite of tests built-in.
+
+To run the tests clone the [repository](https://github.com/mateomh/tempus-time-tracker.git) into your local drive, if you haven't done so, and open a terminal in the root folder of the project and install the necessary packages to make it work by running this command:
+
+> npm install
+
+Then you can just run the following command and see the results
+
+> npm test
+
+
+## Authors
+
+👤 **Mateo mojica**
+
+- Github: [@mateomh](https://github.com/mateomh)
+- Twitter: [@mateo_m_h](https://twitter.com/mateo_m_h)
+- Linkedin: [Mateo mojica](https://linkedin.com/mateo_mojica_hernandez)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- PokeAPI
+- The Pokemon Company
+- [Dave Ceddia](https://www.youtube.com/channel/UCPrkHuq0i1WflifRXUpvNmg)
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
