@@ -15,7 +15,7 @@ const SignIn = props => {
     const user = await ApiComms.checkUserName(userName.value);
 
     if (user === undefined) {
-      console.log('user does not exists');
+      props.displayError('user does not exists');
     } else {
       props.clearFilter();
       props.clearTasks();
@@ -56,6 +56,7 @@ SignIn.propTypes = {
   addTask: PropTypes.func,
   clearTasks: PropTypes.func,
   clearFilter: PropTypes.func,
+  displayError: PropTypes.func,
 };
 
 SignIn.defaultProps = {
@@ -64,6 +65,7 @@ SignIn.defaultProps = {
   addTask: undefined,
   clearTasks: undefined,
   clearFilter: undefined,
+  displayError: undefined,
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -72,6 +74,7 @@ const mapDispatchToProps = dispatch => ({
   addTask: task => dispatch(Actions.addTask(task)),
   clearTasks: () => dispatch(Actions.clearTasks()),
   clearFilter: () => dispatch(Actions.changeFilter({})),
+  displayError: error => dispatch(Actions.setError(error)),
 });
 
 export default connect(undefined, mapDispatchToProps)(SignIn);

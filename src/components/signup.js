@@ -11,13 +11,13 @@ const SignUp = props => {
   const callBack = async () => {
     const userName = document.getElementById('user-name');
     if (userName.value === '') {
-      console.log('User name empty');
+      props.displayError('User name empty');
       return null;
     }
+
     const response = await ApiComms.createUser(userName.value);
-    console.log(response);
     if (response === undefined) {
-      console.log('User name already exists');
+      props.displayError('User name already exists');
     } else {
       props.createSession(response);
       history.push('/');
@@ -47,14 +47,17 @@ const SignUp = props => {
 
 SignUp.propTypes = {
   createSession: PropTypes.func,
+  displayError: PropTypes.func,
 };
 
 SignUp.defaultProps = {
   createSession: undefined,
+  displayError: undefined,
 };
 
 const mapDispatchToProps = dispatch => ({
   createSession: user => dispatch(Actions.createSession(user)),
+  displayError: error => dispatch(Actions.setError(error)),
 });
 
 export default connect(undefined, mapDispatchToProps)(SignUp);
