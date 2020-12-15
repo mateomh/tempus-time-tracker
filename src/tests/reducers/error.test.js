@@ -13,10 +13,10 @@ describe('Error Reducer', () => {
   it(
     '2. Checks the default action for the reducer, should return given state',
     () => {
-      const mockState = 'My Filter';
+      const mockState = 'My State';
       const mockAction = { type: 'any' };
       const state = errorReducer(mockState, mockAction);
-      expect(state).toBe('My Filter');
+      expect(state).toBe('My State');
     },
   );
 
