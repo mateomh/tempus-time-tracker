@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
   width: 100%;
   padding: 2vh;
   margin: 3vh 0;
@@ -14,5 +13,11 @@
 }
 
 .Desc {
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Small {
+  font-size: 2vh;
 }

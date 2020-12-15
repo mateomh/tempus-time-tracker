@@ -20,7 +20,7 @@ const SignUp = props => {
       props.displayError('User name already exists');
     } else {
       props.createSession(response);
-      history.push('/');
+      history.push('/categories');
     }
     return null;
   };
