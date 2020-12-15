@@ -3,26 +3,16 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
-import { Link } from 'react-router-dom';
 import LandingStyles from '../assets/stylesheets/landing.module.css';
 
 const LandingPage = props => {
   return (
     <div className={LandingStyles.Main}>
-      <h1 className={LandingStyles.Title}>Tempus</h1>
-      <Link
-        to="/signin"
-        className={`${LandingStyles.Button} ${LandingStyles.Green}`}
+      <h1
+        className={LandingStyles.Title}
       >
-        Sign In
-      </Link>
-
-      <Link
-        to="/signup"
-        className={`${LandingStyles.Button} ${LandingStyles.Grey}`}
-      >
-        Sign Up
-      </Link>
+        Tempus
+      </h1>
     </div>
   );
 };

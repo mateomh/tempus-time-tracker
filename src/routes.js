@@ -16,18 +16,22 @@ import TotalDisplay from './components/totaldisplay';
 import TaskList from './components/tasklist';
 import NavBar from './components/navbar';
 import CreateTask from './components/createtask';
+import WelcomeBar from './components/welcomebar';
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/">
         <LandingPage />
+        <WelcomeBar />
       </Route>
       <Route exact path="/signin">
         <SignIn />
+        <WelcomeBar />
       </Route>
       <Route exact path="/signup">
         <SignUp />
+        <WelcomeBar />
       </Route>
       <Route exact path="/categories">
         <TotalDisplay />
