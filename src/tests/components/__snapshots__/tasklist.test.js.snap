@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskList Component 2. Checks it renders correctly against the snapshot 1`] = `
+<div
+  className="List"
+>
+  <div
+    className="Item"
+  >
+    <p
+      className="Desc"
+    >
+      <b>
+        Test 1
+      </b>
+      <small
+        className="Small"
+      >
+        Created on:  
+        31-Dec-1969
+      </small>
+    </p>
+    <p
+      className="Time"
+    >
+      <b>
+        123
+      </b>
+       hours
+    </p>
+  </div>
+  <div
+    className="Item"
+  >
+    <p
+      className="Desc"
+    >
+      <b>
+        Test 2
+      </b>
+      <small
+        className="Small"
+      >
+        Created on:  
+        31-Dec-1969
+      </small>
+    </p>
+    <p
+      className="Time"
+    >
+      <b>
+        456
+      </b>
+       hours
+    </p>
+  </div>
+  <button
+    className="Button"
+    onClick={[Function]}
+    type="button"
+  >
+    New task for 
+  </button>
+</div>
+`;
