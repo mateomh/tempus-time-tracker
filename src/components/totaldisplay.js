@@ -10,6 +10,7 @@ const TotalDisplay = props => {
 
   if (Object.keys(user).length === 0) {
     history.push('/');
+    return null;
   }
 
   return (

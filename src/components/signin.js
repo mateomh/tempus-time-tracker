@@ -17,8 +17,6 @@ const SignIn = props => {
     if (user === undefined) {
       props.displayError('user does not exists');
     } else {
-      props.clearFilter();
-      props.clearTasks();
       props.createSession(user);
       const categories = await ApiComms.getCategories();
       categories.map(category => props.addCategory(category));
