@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import categoriesReducer from './categories';
+import errorReducer from './error';
 import filterReducer from './filter';
 import sessionReducer from './session';
 import taskReducer from './task';
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   categories: categoriesReducer,
   tasks: taskReducer,
   total: totalReducer,
+  error: errorReducer,
 });
 
 export default rootReducer;

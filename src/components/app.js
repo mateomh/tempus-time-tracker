@@ -3,7 +3,7 @@ import FlashNotice from './flashnotice';
 
 const App = () => (
   <>
-    <FlashNotice error="" />
+    <FlashNotice />
     <Routes />
   </>
 );

@@ -45,6 +45,19 @@ const clearTasks = () => (
   }
 );
 
+const setError = errormsg => (
+  {
+    type: 'SET_ERROR',
+    payload: errormsg,
+  }
+);
+
+const clearError = () => (
+  {
+    type: 'CLEAR_ERROR',
+  }
+);
+
 export {
   createSession,
   destroySession,
@@ -53,4 +66,6 @@ export {
   addCategory,
   updateTotalHours,
   clearTasks,
+  setError,
+  clearError,
 };
