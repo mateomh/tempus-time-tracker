@@ -17,7 +17,13 @@ const getTasks = async userId => {
   };
 
   const data = await fetch(taskUrl, options);
-  const tasks = await data.json();
+  let tasks;
+  if (data.ok) {
+    tasks = await data.json();
+  } else {
+    tasks = undefined;
+  }
+
   return tasks;
 };
 

@@ -18,11 +18,11 @@ const SignIn = props => {
       props.displayError('user does not exists');
     } else {
       props.createSession(user);
-      const categories = await ApiComms.getCategories();
-      categories.map(category => props.addCategory(category));
+      // const categories = await ApiComms.getCategories();
+      // categories.map(category => props.addCategory(category));
 
-      const tasks = await ApiComms.getTasks(user.id);
-      tasks.map(task => props.addTask(task));
+      // const tasks = await ApiComms.getTasks(user.id);
+      // tasks.map(task => props.addTask(task));
 
       history.push('/categories');
     }
