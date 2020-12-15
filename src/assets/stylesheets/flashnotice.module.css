@@ -1,0 +1,18 @@
+@import url('./general.css');
+
+.Notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  background-color: lightcoral;
+  color: maroon;
+  font-size: 2vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Hide {
+  display: none;
+}
