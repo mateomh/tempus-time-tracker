@@ -2,11 +2,14 @@
 /* eslint-disable arrow-body-style */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import TaskItem from './taskitem';
 import * as Actions from '../actions/actions';
+import TaskListStyles from '../assets/stylesheets/tasklist.module.css';
 
 const TaskList = props => {
   const { tasks, filter, setTotal } = props;
+  const history = useHistory();
 
   const filteredTasks = tasks.filter(task => task.category_id === filter.id);
   const times = filteredTasks.map(task => task.time);
@@ -19,15 +22,26 @@ const TaskList = props => {
 
   setTotal(total);
 
+  const handleClick = () => {
+    history.push('/addtask');
+  };
+
   return (
-    <div className="list">
+    <div className={TaskListStyles.List}>
       {filteredTasks.map(task => (
         <TaskItem
           key={task.id}
           task={task}
         />
       ))}
-
+      <button
+        className={TaskListStyles.Button}
+        type="button"
+        onClick={handleClick}
+      >
+        New task for&nbsp;
+        {filter.name}
+      </button>
     </div>
   );
 };

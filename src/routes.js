@@ -15,6 +15,7 @@ import SignUp from './components/signup';
 import TotalDisplay from './components/totaldisplay';
 import TaskList from './components/tasklist';
 import NavBar from './components/navbar';
+import CreateTask from './components/createtask';
 
 const Routes = () => (
   <BrowserRouter>
@@ -36,6 +37,10 @@ const Routes = () => (
       <Route exact path="/view">
         <TotalDisplay />
         <TaskList />
+        <NavBar />
+      </Route>
+      <Route exact path="/addtask">
+        <CreateTask />
         <NavBar />
       </Route>
     </Switch>

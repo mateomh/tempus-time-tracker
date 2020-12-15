@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   padding: 2vh;
   background-color: var(--blue2);
