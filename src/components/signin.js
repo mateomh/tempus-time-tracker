@@ -6,6 +6,8 @@ import * as ApiComms from '../modules/apicomms';
 import * as Actions from '../actions/actions';
 
 const SignIn = props => {
+  const { displayError, createSession } = props;
+
   const history = useHistory();
 
   const callBack = async () => {
@@ -13,9 +15,9 @@ const SignIn = props => {
     const user = await ApiComms.checkUserName(userName.value);
 
     if (user === undefined) {
-      props.displayError('user does not exists');
+      displayError('user does not exists');
     } else {
-      props.createSession(user);
+      createSession(user);
 
       history.push('/categories');
     }
