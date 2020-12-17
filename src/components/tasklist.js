@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import TaskItem from './taskitem';
 import * as Actions from '../actions/actions';
@@ -10,15 +11,18 @@ const TaskList = props => {
   const history = useHistory();
 
   const filteredTasks = tasks.filter(task => task.category_id === filter.id);
-  const times = filteredTasks.map(task => task.time);
-  let total;
-  if (times.length !== 0) {
-    total = times.reduce((acum, value) => acum + value);
-  } else {
-    total = 0;
-  }
 
-  setTotal(total);
+  useEffect(() => {
+    const times = filteredTasks.map(task => task.time);
+    let total;
+    if (times.length !== 0) {
+      total = times.reduce((acum, value) => acum + value);
+    } else {
+      total = 0;
+    }
+
+    setTotal(total);
+  }, []);
 
   const handleClick = () => {
     history.push('/addtask');
