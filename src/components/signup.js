@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
@@ -6,12 +7,13 @@ import * as ApiComms from '../modules/apicomms';
 import * as Actions from '../actions/actions';
 
 const SignUp = props => {
+  const { displayError, createSession } = props;
   const history = useHistory();
 
   const callBack = async () => {
     const userName = document.getElementById('user-name');
     if (userName.value === '') {
-      props.displayError('User name empty');
+      displayError('User name empty');
       return null;
     }
 
@@ -19,7 +21,7 @@ const SignUp = props => {
     if (response === undefined) {
       props.displayError('User name already exists');
     } else {
-      props.createSession(response);
+      createSession(response);
       history.push('/categories');
     }
     return null;

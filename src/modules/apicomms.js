@@ -1,4 +1,5 @@
-const apiUrl = 'https://tempus-mm-api.herokuapp.com/';
+// const apiUrl = 'https://tempus-mm-api.herokuapp.com/';
+const apiUrl = 'http://localhost:5000/';
 
 const errorHandle = msg => {
   throw Error(msg);
