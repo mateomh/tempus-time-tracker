@@ -1,12 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import { useStore } from 'react-redux';
 import {
   BrowserRouter,
   Switch,
   Route,
-  useHistory,
-  useLocation,
 } from 'react-router-dom';
 import CategoryGrid from './components/categorygrid';
 import LandingPage from './components/landing';
@@ -17,11 +13,13 @@ import TaskList from './components/tasklist';
 import NavBar from './components/navbar';
 import CreateTask from './components/createtask';
 import WelcomeBar from './components/welcomebar';
+import CheckLogin from './components/checklogin';
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/">
+        <CheckLogin />
         <LandingPage />
         <WelcomeBar />
       </Route>
@@ -34,16 +32,19 @@ const Routes = () => (
         <WelcomeBar />
       </Route>
       <Route exact path="/categories">
+        <CheckLogin />
         <TotalDisplay />
         <CategoryGrid />
         <NavBar />
       </Route>
       <Route exact path="/view">
+        <CheckLogin />
         <TotalDisplay />
         <TaskList />
         <NavBar />
       </Route>
       <Route exact path="/addtask">
+        <CheckLogin />
         <CreateTask />
         <NavBar />
       </Route>

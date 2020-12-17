@@ -1,16 +1,9 @@
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import DisplayStyles from '../assets/stylesheets/totaldisplay.module.css';
 
 const TotalDisplay = props => {
   const { user, filter, total } = props;
-  const history = useHistory();
-
-  if (Object.keys(user).length === 0) {
-    history.push('/');
-    return null;
-  }
 
   return (
     <div className={DisplayStyles.Display}>

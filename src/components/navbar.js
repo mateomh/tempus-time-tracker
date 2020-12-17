@@ -10,6 +10,7 @@ const NavBar = props => {
     clearUser,
     clearTasks,
     clearFilter,
+    clearSession,
   } = props;
 
   const history = useHistory();
@@ -21,6 +22,8 @@ const NavBar = props => {
         clearUser();
         clearTasks();
         clearFilter();
+        clearSession();
+        history.push('/');
         break;
       case 'categories':
         history.push('/categories');
@@ -65,6 +68,7 @@ NavBar.propTypes = {
   clearUser: PropTypes.func,
   clearTasks: PropTypes.func,
   clearFilter: PropTypes.func,
+  clearSession: PropTypes.func,
 };
 
 NavBar.defaultProps = {
@@ -72,6 +76,7 @@ NavBar.defaultProps = {
   clearUser: undefined,
   clearTasks: undefined,
   clearFilter: undefined,
+  clearSession: undefined,
 };
 
 const mapStateToProps = state => ({
@@ -82,6 +87,7 @@ const mapDispatchToProps = dispatch => ({
   clearUser: () => dispatch(Actions.createSession({})),
   clearTasks: () => dispatch(Actions.clearTasks()),
   clearFilter: () => dispatch(Actions.changeFilter({})),
+  clearSession: () => dispatch(Actions.destroySession()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

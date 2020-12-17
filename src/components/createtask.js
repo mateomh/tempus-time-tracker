@@ -31,7 +31,7 @@ const CreateTask = props => {
         user_id: user.id,
         category_id: filter.id,
       };
-      const apiTask = await ApiComms.saveTask(task);
+      const apiTask = await ApiComms.saveTask(task, user.token);
 
       if (apiTask !== undefined) {
         addTask(apiTask);

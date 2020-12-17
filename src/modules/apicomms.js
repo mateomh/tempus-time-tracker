@@ -5,13 +5,14 @@ const errorHandle = msg => {
   throw Error(msg);
 };
 
-const getTasks = async userId => {
-  const taskUrl = apiUrl.concat(`tasks/${userId}`);
+const getTasks = async token => {
+  const taskUrl = apiUrl.concat('tasks/');
 
   const options = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
+      token,
     },
     mode: 'cors',
   };
@@ -27,13 +28,32 @@ const getTasks = async userId => {
   return tasks;
 };
 
-const saveTask = async task => {
+const getCategories = async token => {
+  const categoriesUrl = apiUrl.concat('categories/');
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+      token,
+    },
+    mode: 'cors',
+  };
+
+  const data = await fetch(categoriesUrl, options);
+  const categories = await data.json();
+
+  return categories;
+};
+
+const saveTask = async (task, token) => {
   const taskUrl = apiUrl.concat('tasks/');
 
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
+      token,
     },
     body: JSON.stringify(task),
     mode: 'cors',
@@ -66,7 +86,7 @@ const checkUserName = async name => {
 
   let user;
   if (resp.ok) {
-    [user] = await resp.json();
+    user = await resp.json();
     delete user.created_at;
     delete user.updated_at;
   } else {
@@ -105,24 +125,7 @@ const createUser = async (name, avatarurl = null) => {
   return data;
 };
 
-const getCategories = async () => {
-  const categoriesUrl = apiUrl.concat('categories/');
-
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
-    mode: 'cors',
-  };
-
-  const data = await fetch(categoriesUrl, options);
-  const categories = await data.json();
-
-  return categories;
-};
-
-const createCategory = async (name, logourl) => {
+const createCategory = async (name, logourl, token) => {
   const categoryUrl = apiUrl.concat('categories/');
 
   let namePost = name.toLowerCase();
@@ -137,6 +140,7 @@ const createCategory = async (name, logourl) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
+      token,
     },
     mode: 'cors',
     body: JSON.stringify(category),

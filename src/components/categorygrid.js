@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
@@ -10,20 +9,20 @@ import * as ApiComms from '../modules/apicomms';
 const CategoryGrid = props => {
   const {
     categories,
-    user,
     changeFilter,
     setTotal,
     addCategory,
     addTask,
   } = props;
+  const { user } = props;
   const history = useHistory();
   let total;
 
   useEffect(async () => {
-    const categories = await ApiComms.getCategories();
+    const categories = await ApiComms.getCategories(user.token);
     categories.map(category => addCategory(category));
 
-    const apiTasks = await ApiComms.getTasks(user.id);
+    const apiTasks = await ApiComms.getTasks(user.token);
 
     if (apiTasks !== undefined) {
       apiTasks.map(task => addTask(task));
@@ -47,18 +46,6 @@ const CategoryGrid = props => {
     changeFilter(category);
     history.push('/view');
   };
-
-  // const times = tasks.map(task => task.time);
-
-  // if (times.length !== 0) {
-  //   total = times.reduce((acum, value) => acum + value);
-  // } else {
-  //   total = 0;
-  // }
-
-  // setTotal(total);
-
-  // changeFilter({});
 
   return (
     <div className={CategoryStyles.Container}>

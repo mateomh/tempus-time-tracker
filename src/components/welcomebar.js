@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import NavbarStyles from '../assets/stylesheets/navbar.module.css';
 
