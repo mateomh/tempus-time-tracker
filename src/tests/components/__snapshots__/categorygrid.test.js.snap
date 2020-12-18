@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryGrid Component 2. Checks it renders correctly against the snapshot 1`] = `
+<div
+  className="Container"
+>
+  <button
+    className="Item"
+    id={123}
+    onClick={[Function]}
+    type="button"
+  >
+    Test 1
+  </button>
+  <button
+    className="Item"
+    id={456}
+    onClick={[Function]}
+    type="button"
+  >
+    Test 2
+  </button>
+</div>
+`;

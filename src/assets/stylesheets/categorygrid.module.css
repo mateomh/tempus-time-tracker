@@ -1,0 +1,24 @@
+@import url('./general.css');
+
+.Container {
+  background-color: var(--grey3);
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2vh;
+  gap: 1vh;
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5vh solid var(--black1);
+  background-color: var(--blue2);
+  color: white;
+  font-weight: bold;
+  font-size: 3.5vh;
+  cursor: pointer;
+  border-radius: 5vh;
+  height: 15vh;
+}

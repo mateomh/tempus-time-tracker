@@ -1,0 +1,15 @@
+@import url('./general.css');
+
+.Button {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  border: none;
+  background-color: var(--green2);
+  color: white;
+  font-size: 2.5vh;
+  font-weight: bold;
+  cursor: pointer;
+}

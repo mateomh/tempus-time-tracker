@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TotalDisplay Component 2. Checks it renders correctly against the snapshot 1`] = `
+<div
+  className="Display"
+>
+  <p
+    className="Text"
+  >
+    Testy
+    ’s  total time for 
+    All
+     categories
+  </p>
+  <p
+    className="Number"
+  >
+    123456987
+     hours
+  </p>
+</div>
+`;
